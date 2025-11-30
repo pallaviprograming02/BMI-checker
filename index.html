@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BMI Checker with Share & Export</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style .css">
+  
+</head>
+<body>
+  <div class="calculator">
+    <div class="header">
+      <div class="title">BMI Checker</div>
+      <p class="subtitle">
+        Metric units (kg, cm). Share carefully and protect patient privacy.
+      </p>
+    </div>
+
+    <div class="inputs">
+      <div class="field full">
+        <label for="patientName">Patient name</label>
+        <div class="input-wrap">
+          <input type="text" id="patientName" placeholder="e.g. John Doe" />
+        </div>
+        <div class="error-text" id="nameErr"></div>
+      </div>
+
+      <div class="field">
+        <label for="weight">Weight</label>
+        <div class="input-wrap">
+          <input type="text" id="weight" placeholder="70" />
+          <span class="unit">kg</span>
+        </div>
+        <div class="error-text" id="weightErr"></div>
+      </div>
+
+      <div class="field">
+        <label for="height">Height</label>
+        <div class="input-wrap">
+          <input type="text" id="height" placeholder="170" />
+          <span class="unit">cm</span>
+        </div>
+        <div class="error-text" id="heightErr"></div>
+      </div>
+
+      <p class="helper">
+        Example: <span>70 kg</span> &amp; <span>170 cm</span> → BMI ≈ <span>24.2</span>
+      </p>
+    </div>
+
+    <div class="result" id="resultBox">
+      <div class="result-top">
+        <div>
+          <p class="bmi-label">Your BMI</p>
+          <p class="bmi-value" id="bmiValue">--</p>
+        </div>
+        <div id="bmiCategory"></div>
+      </div>
+      <p class="advice" id="bmiAdvice">
+        Enter patient name, weight and height above to see BMI.
+      </p>
+      <p class="note">
+        BMI = weight(kg) ÷ height(m)<sup>2</sup>. <span>Share only with consent and follow your clinic’s privacy rules.</span>[web:135][web:141][web:148]
+      </p>
+
+      <div class="actions">
+        <button type="button" class="btn btn-share" id="shareBtn">📤 Share</button>
+        <button type="button" class="btn btn-copy" id="copyBtn">📋 Copy name & BMI</button>
+        <button type="button" class="btn btn-export" id="exportBtn">⬇️ Export CSV</button>
+      </div>
+      <p class="share-status" id="shareStatus"></p>
+    </div>
+  </div>
+
+  
+  <script src="script.js"></script>
+
+
+</body>
+</html>
